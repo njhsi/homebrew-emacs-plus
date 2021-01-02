@@ -956,6 +956,12 @@ index 0000000000..0d628b533a
 +decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction
 +decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 +{
++  NSURLRequest *request = navigationAction.request;
++  if([request.URL.absoluteString hasPrefix:@"org-protocol://"]) {
++   //[[NSWorkspace sharedWorkspace] openURL:request.URL];
++   decisionHandler(WKNavigationActionPolicyCancel);
++   return;
++   }
 +  switch (navigationAction.navigationType) {
 +  case WKNavigationTypeLinkActivated:
 +    decisionHandler (WKNavigationActionPolicyAllow);
