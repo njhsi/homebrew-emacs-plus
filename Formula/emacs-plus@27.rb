@@ -83,7 +83,7 @@ class EmacsPlusAT27 < EmacsBase
   if build.with? "xwidgets"
     patch do
       url (UrlResolver.patch_url "emacs-27/xwidgets_webkit_in_cocoa")
-      sha256 "1dc3024e7ec3965d6d1639a82ba13f0c9e0cab2f8b73b1b47c72aa5d5883202e"
+      sha256 "49d0041a44ae65e4f61e7fbaa3b77b90dac3e44f8b60adcf449f54c7356091cb"
     end
   end
 
